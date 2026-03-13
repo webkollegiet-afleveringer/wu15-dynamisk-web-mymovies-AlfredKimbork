@@ -1,0 +1,53 @@
+.dark-mode {
+    background: #000;
+    transition: all 200ms ease;
+
+    & .header {
+        & .__menu path {
+            fill: #FFF;
+        }
+        
+        & .__switch {
+            background-color: #FFF;
+            
+            
+            & .__center {
+                background: #000;
+                transform: scale(.9) translateX(1.65rem);
+            }
+        }
+    }
+}
+
+.header {
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+
+    & .__menu {
+        background: transparent;
+        border: none;
+    }
+
+    & .__switch {
+        background-color: #AAA9B1;
+
+        width: 3.5rem;
+        height: 2rem;
+
+        align-items: center;
+        transition: all 200ms ease;
+
+        & .__center {
+            transition: all 200ms ease;
+            transform: scale(.9);
+            width: 2rem;
+            height: 2rem;
+            background: #FFF;
+            border-radius: 2rem;
+        }
+    }
+}
+
+
+

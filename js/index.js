@@ -1,28 +1,35 @@
-import { useFetch } from "./useFetch.js"
 import { formatPlaying } from "./formats/formatPlaying.js"
+import { formatPopular } from "./formats/formatPopular.js"
+import { menu } from "./icons.js";
 
 const body = document.querySelector("body")
 
-let url = "https://api.themoviedb.org/3/movie/now_playing"
-
-const data = await useFetch(url)
-const res = data.results
-
 body.innerHTML = ` 
-    <header>
-        <h1>MyMovies</h1>
+    <header class="header --flex">
+        <button class="__menu">${menu}</button>
+        <h1 class="__heading">MyMovies</h1>
         <label class="__switch --pill">
             <input class="__toggle --hidden" type="checkbox">
             <div class="__center"></div>
         </label>
     </header>
     <main>
-        <section class="now-playing">
-            <header class="--flex">
+        <section class="showing">
+            <header class="__header --flex">
                 <h2>Now Showing</h2>
+                <a href="" class="__more --pill --grey">See more</a>
             </header>
             <ul class="__showing-list --no-dot --grid">
-                ${await formatPlaying(res)}
+                ${await formatPlaying("https://api.themoviedb.org/3/movie/now_playing")}
+            </ul>
+        </section>
+        <section class="popular">
+            <header class="__header --flex">
+                <h2>Popular</h2>
+                <a href="" class="__more --pill --grey">See more</a>
+            </header>
+            <ul class="__popular-list --no-dot --flex">
+                ${await formatPopular("https://api.themoviedb.org/3/trending/movie/day")}
             </ul>
         </section>
     </main>
