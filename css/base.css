@@ -63,3 +63,15 @@ h1, h2  {
     border: 2px solid #BFBEC4;
     color: #C3C1C7;
 }
+
+.__genre-list {
+    gap: .25rem .5rem;
+    justify-content: start;
+    flex-wrap: wrap;
+    
+    & .__genre {
+        padding: .25rem 1rem;
+        align-items: center;
+        text-wrap: nowrap;
+    }        
+}
