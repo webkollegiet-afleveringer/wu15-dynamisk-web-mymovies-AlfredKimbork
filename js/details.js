@@ -14,8 +14,7 @@ body.innerHTML = `
             <div class="__center"></div>
         </label>
     </header>   
-    ${await formatDetailed(params.get("id"))}
-`;
+    ${await formatDetailed(params.get("id"))}`;
 
 document.querySelector(".__toggle").addEventListener("click", () => {
     body.classList.toggle("dark-mode")

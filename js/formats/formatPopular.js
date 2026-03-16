@@ -8,9 +8,13 @@ const formatTime = total => {
 }
 export const formatPopular = async url => {
     const data = await useFetch(url)
-    const movies = data.results
+    const movieIDs = data.results.map(movie => { return movie.id})
+    
+    
 
-    const moviesData = await Promise.all(movies.map(movie => useFetch(`https://api.themoviedb.org/3/movie/${movie.id}`)))
+    const moviesData = await Promise.all(movieIDs.map(id => useFetch(`https://api.themoviedb.org/3/movie/${id}`)))
+    console.log(moviesData);
+    
     const formatted = moviesData.map(movieData=> {
         const [id, title, rating, genres, runtime, poster] = [movieData.id, movieData.title, movieData.vote_average.toFixed(1), movieData.genres, formatTime(movieData.runtime), movieData.poster_path];
         return `
@@ -27,6 +31,5 @@ export const formatPopular = async url => {
             </li>   
         `;
     }).join("");
-    console.log("triggered")
     return formatted
 }

@@ -1,18 +1,6 @@
 @import url(./base.css);
 @import url(./header.css);
 
-.dark-mode{
-    & .__rating {
-        color: #7B7B7B;
-    } 
-}
-
-.__rating {
-    color: #9C9C9C;
-    gap: .25rem;
-    align-items: center;
-}
-
 .__duration {
     align-items: center;
     gap: .25rem;
@@ -21,11 +9,6 @@
 .__header {
     justify-content: space-between;
     padding: 1rem 1rem 0;
-
-    & .__more {
-        padding: .25rem .75rem;
-        text-decoration: none;
-    }
 }
 
 

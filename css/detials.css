@@ -1,7 +1,0 @@
-@import url(./base.css);
-@import url(./header.css);
-
-.header {
-    position: absolute;
-    width: 100%;
-}

@@ -19,6 +19,5 @@ export const formatPlaying = async url => {
         </li>   
         `;
     }).join("");
-    console.log(formatted);
     return formatted
 }
